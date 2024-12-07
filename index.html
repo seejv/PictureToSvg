@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片转SVG工具</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>图片转SVG工具</h1>
+        
+        <!-- 上传区域 -->
+        <div class="upload-area" id="dropZone">
+            <input type="file" id="fileInput" accept="image/png,image/jpeg" hidden>
+            <div class="upload-content">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236c757d' d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z'/%3E%3C/svg%3E" alt="上传图标">
+                <p>点击或拖拽图片到此处</p>
+                <span class="hint">支持 PNG、JPEG 格式</span>
+            </div>
+        </div>
+
+        <!-- 预览区域 -->
+        <div class="preview-container">
+            <div class="preview-box">
+                <h3>原始图片</h3>
+                <div class="preview original">
+                    <img id="originalImage" alt="原始图片">
+                </div>
+            </div>
+            <div class="preview-box">
+                <h3>SVG预览</h3>
+                <div class="preview svg">
+                    <div id="svgPreview"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 下载按钮 -->
+        <button id="downloadBtn" class="download-btn" disabled>下载SVG</button>
+    </div>
+
+    <script src="js/imagetracer.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
